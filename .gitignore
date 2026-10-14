@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Árbol del proyecto generado localmente
+/tree.txt
