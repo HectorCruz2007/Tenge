@@ -27,8 +27,28 @@ App Android para administrar dinero: saldo, planes de ahorro, gastos, ingresos/g
 
 ## Estado
 - `MainActivity` muestra un `Surface` vacío con `TengeTheme`.
-- Modelos creados en `data/model`: `Category`, `Expense`, `Frequency`, `RecurringType`, `Recurring`, `SavingsPlan`, `SavingsTemplate`.
-- Pendiente: modelos `InvestmentFund`, `PendingNotice`; capa DataStore, repositorios, ViewModels y pantallas.
-- Las carpetas `core/`, `data/datasource`, `data/repository` y `presentation/{components,feature,navigation}` están planeadas y aún no existen.
+- Modelos creados en `data/model`: `Category`, `Expense`, `Frequency`, `RecurringType`, `Recurring`, `SavingsPlan`, `SavingsTemplate`, `InvestmentFund`.
+- `core/finance` implementado con funciones de extensión puras (RNF-06):
+
+| Archivo | Contenido | Requisitos |
+|---|---|---|
+| `FrequencyExt.kt` | Fechas por periodo, ocurrencias, tasa máxima por frecuencia | RF-10, RF-12, RF-25 |
+| `FormatExt.kt` | Formato MXN y fecha es-MX, texto → centavos | RNF-15, RNF-10 |
+| `ValidationExt.kt` | Validación de montos, nombres, plazos, tasas y saldo | RF-03, RF-25 |
+| `ExpenseExt.kt` | Gastos del mes, total y desglose por categoría | RF-05 |
+| `RecurringExt.kt` | Próximo vencimiento y ocurrencias pendientes | RF-10, RF-12 |
+| `SavingsPlanExt.kt` / `SavingsStatus.kt` | Cuota, progreso, fecha estimada y estado del plan | RF-14, RF-16, RF-17, RF-18 |
+| `InvestmentFundExt.kt` | Interés compuesto, valor futuro y patrimonio | RF-01, RF-21, RF-22 |
+| `MonthEndProjection.kt` / `RiskLevel.kt` | Proyección a fin de mes y nivel de riesgo | RF-07, RF-08 |
+| `Occurrence.kt` | Fecha + monto de una ocurrencia pendiente | RF-12 |
+
+- Pendiente: modelo `PendingNotice`; capa DataStore, repositorios, ViewModels y pantallas.
+- Las carpetas `core/di`, `data/datasource`, `data/repository` y `presentation/{components,feature,navigation}` están planeadas y aún no existen.
+
+## Decisiones de diseño
+- **Rango de tasa (RF-25):** mayor a 0 y como máximo el equivalente a 100 % anual: 0.19 % diaria, 1.34 % semanal, 5.95 % mensual.
+- **Cuota de ahorro:** se redondea hacia arriba; la última cuota cubre solo lo que falta.
+- **Riesgo de fin de mes:** margen = saldo proyectado / (saldo + ingresos restantes). Bajo ≥ 50 %, Medio ≥ 25 %, Alto < 25 %, Crítico si el saldo proyectado es negativo.
+- **Ocurrencias mensuales:** se calculan desde la fecha de inicio para que un día 31 no se desplace tras un mes corto.
 
 > `tree.txt` contiene el árbol del proyecto y está excluido de git.
