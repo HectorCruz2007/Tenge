@@ -26,6 +26,9 @@ App Android para administrar dinero: saldo, planes de ahorro, gastos, ingresos/g
 | `presentation/theme` | Tema de la app (`TengeTheme`) |
 
 ## Estado
-Esqueleto de carpetas creado; `MainActivity` muestra un `Surface` vacío con `TengeTheme`. Aún no hay pantallas, ViewModels ni capa de datos implementados.
+- `MainActivity` muestra un `Surface` vacío con `TengeTheme`.
+- Modelos creados en `data/model`: `Category`, `Expense`, `Frequency`, `RecurringType`, `Recurring`.
+- Pendiente: modelos `SavingsPlan`, `SavingsTemplate`, `InvestmentFund`, `PendingNotice`; capa DataStore, repositorios, ViewModels y pantallas.
+- Las carpetas `core/`, `data/datasource`, `data/repository` y `presentation/{components,feature,navigation}` están planeadas y aún no existen.
 
 > `tree.txt` contiene el árbol del proyecto y está excluido de git.
