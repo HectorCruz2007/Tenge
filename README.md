@@ -27,7 +27,7 @@ App Android para administrar dinero: saldo, planes de ahorro, gastos, ingresos/g
 
 ## Estado
 - `MainActivity` muestra un `Surface` vacío con `TengeTheme`.
-- Modelos creados en `data/model`: `Category`, `Expense`, `Frequency`, `RecurringType`, `Recurring`, `SavingsPlan`, `SavingsTemplate`, `InvestmentFund`.
+- Modelos creados en `data/model`: `Category`, `Expense`, `Frequency`, `RecurringType`, `Recurring`, `SavingsPlan`, `SavingsTemplate`, `InvestmentFund`, `NoticeSource`, `PendingNotice`.
 - `core/finance` implementado con funciones de extensión puras (RNF-06):
 
 | Archivo | Contenido | Requisitos |
@@ -42,7 +42,7 @@ App Android para administrar dinero: saldo, planes de ahorro, gastos, ingresos/g
 | `MonthEndProjection.kt` / `RiskLevel.kt` | Proyección a fin de mes y nivel de riesgo | RF-07, RF-08 |
 | `Occurrence.kt` | Fecha + monto de una ocurrencia pendiente | RF-12 |
 
-- Pendiente: modelo `PendingNotice`; capa DataStore, repositorios, ViewModels y pantallas.
+- Pendiente: dependencias (DataStore, kotlinx.serialization, ViewModel y Navigation Compose); capa DataStore, repositorios, ViewModels y pantallas.
 - Las carpetas `core/di`, `data/datasource`, `data/repository` y `presentation/{components,feature,navigation}` están planeadas y aún no existen.
 
 ## Decisiones de diseño
