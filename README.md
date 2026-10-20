@@ -51,10 +51,12 @@ App Android para administrar dinero: saldo, planes de ahorro, gastos, ingresos/g
   - `ExpenseRepository`: registrar y eliminar gastos, descontando o devolviendo el monto al saldo en la misma transacción (RF-04, RF-06).
   - `CategoryRepository`: catálogo de categorías (solo lectura).
   - `InsufficientBalanceException`: se lanza dentro de la transacción si el saldo quedaría negativo (RF-03).
-- Pendiente: repositorios de recurrentes, ahorro, inversiones y avisos; contenedor de dependencias (`core/di`); JSON semilla; ViewModels y pantallas.
-- Las carpetas `core/di` y `presentation/{components,feature,navigation}` están planeadas y aún no existen.
+- `core/di` implementado: interfaz `AppContainer` y `DefaultAppContainer` (crea un solo `AppStateDataSource` y los repositorios con `lazy`). `TengeApplication` mantiene el contenedor y está registrada en `AndroidManifest.xml`.
+- Pendiente: JSON semilla (RF-24); repositorios de recurrentes, ahorro, inversiones y avisos; ViewModels y pantallas.
+- Las carpetas `presentation/{components,feature,navigation}` están planeadas y aún no existen.
 
 ## Decisiones de diseño
+- **Inyección de dependencias manual** (sin Hilt/Koin): un contenedor en `Application` que vive lo mismo que el proceso, así sobrevive a la rotación (RNF-12) y DataStore tiene una sola instancia.
 - **Eliminar un gasto devuelve su monto al saldo**, porque al registrarlo se descontó (RF-04/RF-06).
 - **La nota del ajuste manual de saldo (RF-02) no se guarda**: no hay historial de movimientos que la muestre.
 - **Un solo `AppState` en DataStore:** las operaciones que cambian varios valores (ej. confirmar una cuota) se hacen en un solo `updateData`, así que se guardan completas o no se guardan (RNF-09). Si una validación lanza una excepción dentro de la transacción, no se escribe nada.
