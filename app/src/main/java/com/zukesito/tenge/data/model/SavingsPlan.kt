@@ -9,6 +9,7 @@ import java.time.LocalDate
 /**
  * Plan de ahorro con una meta y un plazo.
  */
+@Serializable
 data class SavingsPlan(
     val id: String,
     // Nombre del objetivo

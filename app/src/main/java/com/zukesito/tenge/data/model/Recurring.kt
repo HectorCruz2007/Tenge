@@ -9,6 +9,7 @@ import java.time.LocalDate
 /**
  * Ingreso o gasto que se repite con cierta frecuencia.
  */
+@Serializable
 data class Recurring(
     val id: String,
     val name: String,

@@ -28,7 +28,7 @@ App Android para administrar dinero: saldo, planes de ahorro, gastos, ingresos/g
 
 ## Estado
 - `MainActivity` muestra un `Surface` vacío con `TengeTheme`.
-- Modelos creados en `data/model`: `Category`, `Expense`, `Frequency`, `RecurringType`, `Recurring`, `SavingsPlan`, `SavingsTemplate`, `InvestmentFund`, `NoticeSource`, `PendingNotice`.
+- Modelos creados en `data/model`: `Category`, `Expense`, `Frequency`, `RecurringType`, `Recurring`, `SavingsPlan`, `SavingsTemplate`, `InvestmentFund`, `NoticeSource`, `PendingNotice`, `LocalDateSerializer`.
 - `core/finance` implementado con funciones de extensión puras (RNF-06):
 
 | Archivo | Contenido | Requisitos |
@@ -44,7 +44,8 @@ App Android para administrar dinero: saldo, planes de ahorro, gastos, ingresos/g
 | `Occurrence.kt` | Fecha + monto de una ocurrencia pendiente | RF-12 |
 
 - Dependencias agregadas: DataStore, kotlinx.serialization, ViewModel/Lifecycle Compose y Navigation Compose.
-- Pendiente: serialización de modelos; capa DataStore, repositorios, ViewModels y pantallas.
+- Serialización: `LocalDateSerializer` guarda fechas como texto ISO; `Category`, `SavingsTemplate`, `Expense`, `Recurring`, `SavingsPlan` e `InvestmentFund` son `@Serializable` (`PendingNotice` no se persiste).
+- Pendiente: capa DataStore (`data/datasource`), repositorios, ViewModels y pantallas.
 - Las carpetas `core/di`, `data/datasource`, `data/repository` y `presentation/{components,feature,navigation}` están planeadas y aún no existen.
 
 ## Decisiones de diseño

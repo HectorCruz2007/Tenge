@@ -9,6 +9,7 @@ import java.time.LocalDate
 /**
  * Fondo de inversión
  */
+@Serializable
 data class InvestmentFund(
     val id: String,
     val name: String,

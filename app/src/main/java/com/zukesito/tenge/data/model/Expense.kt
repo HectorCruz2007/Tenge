@@ -9,6 +9,7 @@ import java.time.LocalDate
 /**
  * Gasto registrado por el usuario.
  */
+@Serializable
 data class Expense(
     val id: String,
     // Monto en centavos para evitar errores de redondeo
