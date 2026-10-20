@@ -1,5 +1,9 @@
+@file:UseSerializers(LocalDateSerializer::class)
+
 package com.zukesito.tenge.data.model
 
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.UseSerializers
 import java.time.LocalDate
 
 /**

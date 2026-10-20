@@ -4,7 +4,8 @@ App Android para administrar dinero: saldo, planes de ahorro, gastos, ingresos/g
 
 ## Stack
 - Kotlin + Jetpack Compose (Material 3)
-- Jetpack DataStore (persistencia, pendiente de agregar)
+- Jetpack DataStore 1.2.1 tipado con kotlinx.serialization 1.9.0 (persistencia local en JSON)
+- Navigation Compose 2.10.2 · Lifecycle 2.11.0 (ViewModel y `collectAsStateWithLifecycle`)
 - Arquitectura MVVM con UDF y StateFlow
 - Principios SOLID y Atomic Design para la UI
 
@@ -42,7 +43,8 @@ App Android para administrar dinero: saldo, planes de ahorro, gastos, ingresos/g
 | `MonthEndProjection.kt` / `RiskLevel.kt` | Proyección a fin de mes y nivel de riesgo | RF-07, RF-08 |
 | `Occurrence.kt` | Fecha + monto de una ocurrencia pendiente | RF-12 |
 
-- Pendiente: dependencias (DataStore, kotlinx.serialization, ViewModel y Navigation Compose); capa DataStore, repositorios, ViewModels y pantallas.
+- Dependencias agregadas: DataStore, kotlinx.serialization, ViewModel/Lifecycle Compose y Navigation Compose.
+- Pendiente: serialización de modelos; capa DataStore, repositorios, ViewModels y pantallas.
 - Las carpetas `core/di`, `data/datasource`, `data/repository` y `presentation/{components,feature,navigation}` están planeadas y aún no existen.
 
 ## Decisiones de diseño
