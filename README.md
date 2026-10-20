@@ -45,10 +45,12 @@ App Android para administrar dinero: saldo, planes de ahorro, gastos, ingresos/g
 
 - Dependencias agregadas: DataStore, kotlinx.serialization, ViewModel/Lifecycle Compose y Navigation Compose.
 - Serialización: `LocalDateSerializer` guarda fechas como texto ISO; `Category`, `SavingsTemplate`, `Expense`, `Recurring`, `SavingsPlan` e `InvestmentFund` son `@Serializable` (`PendingNotice` no se persiste).
-- Pendiente: capa DataStore (`data/datasource`), repositorios, ViewModels y pantallas.
-- Las carpetas `core/di`, `data/datasource`, `data/repository` y `presentation/{components,feature,navigation}` están planeadas y aún no existen.
+- `data/datasource` implementado: `AppState` (estado completo serializable), `AppStateSerializer` (JSON con `ignoreUnknownKeys`), interfaz `AppStateDataSource` e implementación `DataStoreAppStateDataSource` (archivo `tenge_state.json`).
+- Pendiente: repositorios, contenedor de dependencias, JSON semilla, ViewModels y pantallas.
+- Las carpetas `core/di`, `data/repository` y `presentation/{components,feature,navigation}` están planeadas y aún no existen.
 
 ## Decisiones de diseño
+- **Un solo `AppState` en DataStore:** las operaciones que cambian varios valores (ej. confirmar una cuota) se hacen en un solo `updateData`, así que se guardan completas o no se guardan (RNF-09). Si una validación lanza una excepción dentro de la transacción, no se escribe nada.
 - **Rango de tasa (RF-25):** mayor a 0 y como máximo el equivalente a 100 % anual: 0.19 % diaria, 1.34 % semanal, 5.95 % mensual.
 - **Cuota de ahorro:** se redondea hacia arriba; la última cuota cubre solo lo que falta.
 - **Riesgo de fin de mes:** margen = saldo proyectado / (saldo + ingresos restantes). Bajo ≥ 50 %, Medio ≥ 25 %, Alto < 25 %, Crítico si el saldo proyectado es negativo.
