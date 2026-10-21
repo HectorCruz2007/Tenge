@@ -1,0 +1,19 @@
+{
+  "categories": [
+    { "id": "food", "name": "Comida" },
+    { "id": "transport", "name": "Transporte" },
+    { "id": "home", "name": "Hogar y servicios" },
+    { "id": "health", "name": "Salud" },
+    { "id": "entertainment", "name": "Entretenimiento" },
+    { "id": "education", "name": "Educación" },
+    { "id": "shopping", "name": "Compras" },
+    { "id": "other", "name": "Otros" }
+  ],
+  "templates": [
+    { "name": "Fondo de emergencia", "goalCents": 1000000, "termCount": 6, "termUnit": "MONTHLY" },
+    { "name": "Vacaciones", "goalCents": 1500000, "termCount": 10, "termUnit": "MONTHLY" },
+    { "name": "Celular nuevo", "goalCents": 800000, "termCount": 16, "termUnit": "WEEKLY" },
+    { "name": "Regalos navideños", "goalCents": 300000, "termCount": 8, "termUnit": "WEEKLY" },
+    { "name": "Reto de 30 días", "goalCents": 150000, "termCount": 30, "termUnit": "DAILY" }
+  ]
+}

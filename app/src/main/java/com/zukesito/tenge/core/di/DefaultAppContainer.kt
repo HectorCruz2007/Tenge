@@ -9,9 +9,12 @@ import com.zukesito.tenge.data.repository.CategoryRepository
 import com.zukesito.tenge.data.repository.CategoryRepositoryImpl
 import com.zukesito.tenge.data.repository.ExpenseRepository
 import com.zukesito.tenge.data.repository.ExpenseRepositoryImpl
+import com.zukesito.tenge.data.repository.SeedRepository
+import com.zukesito.tenge.data.datasource.AssetSeedDataSource
+import com.zukesito.tenge.data.repository.SeedRepositoryImpl
 
 /** Implementación real del contenedor*/
-class DefaultAppContainer(context: Context) : AppContainer {
+class DefaultAppContainer(private val context: Context) : AppContainer {
 
     // Una sola fuente de datos para toda la app
     private val dataSource: AppStateDataSource = DataStoreAppStateDataSource(context)
@@ -20,4 +23,7 @@ class DefaultAppContainer(context: Context) : AppContainer {
     override val balanceRepository: BalanceRepository by lazy { BalanceRepositoryImpl(dataSource) }
     override val expenseRepository: ExpenseRepository by lazy { ExpenseRepositoryImpl(dataSource) }
     override val categoryRepository: CategoryRepository by lazy { CategoryRepositoryImpl(dataSource) }
+    override val seedRepository: SeedRepository by lazy {
+        SeedRepositoryImpl(dataSource, AssetSeedDataSource(context))
+    }
 }

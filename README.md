@@ -52,7 +52,8 @@ App Android para administrar dinero: saldo, planes de ahorro, gastos, ingresos/g
   - `CategoryRepository`: catálogo de categorías (solo lectura).
   - `InsufficientBalanceException`: se lanza dentro de la transacción si el saldo quedaría negativo (RF-03).
 - `core/di` implementado: interfaz `AppContainer` y `DefaultAppContainer` (crea un solo `AppStateDataSource` y los repositorios con `lazy`). `TengeApplication` mantiene el contenedor y está registrada en `AndroidManifest.xml`.
-- Pendiente: JSON semilla (RF-24); repositorios de recurrentes, ahorro, inversiones y avisos; ViewModels y pantallas.
+- Datos semilla (RF-24): `SeedData` + `SeedDataSource`/`AssetSeedDataSource` leen `assets/seed.json`; `SeedRepository` lo carga en `AppState` solo si `isSeeded` es `false`. `TengeApplication` lanza la carga al arrancar. Incluye 8 categorías (ids fijos: `food`, `transport`, …) y 5 plantillas de ahorro.
+- Pendiente: repositorios de recurrentes, ahorro, inversiones y avisos; ViewModels y pantallas.
 - Las carpetas `presentation/{components,feature,navigation}` están planeadas y aún no existen.
 
 ## Decisiones de diseño
