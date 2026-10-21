@@ -1,5 +1,6 @@
 package com.zukesito.tenge.data.datasource
 
+import com.zukesito.tenge.data.model.BalanceAdjustment
 import com.zukesito.tenge.data.model.Category
 import com.zukesito.tenge.data.model.Expense
 import com.zukesito.tenge.data.model.InvestmentFund
@@ -15,6 +16,8 @@ import kotlinx.serialization.Serializable
 data class AppState(
     // Saldo disponible en centavos
     val balanceCents: Long = 0L,
+    // Historial de ajustes manuales del saldo
+    val adjustments: List<BalanceAdjustment> = emptyList(),
     val expenses: List<Expense> = emptyList(),
     val recurrings: List<Recurring> = emptyList(),
     val savingsPlans: List<SavingsPlan> = emptyList(),
@@ -24,4 +27,4 @@ data class AppState(
     val templates: List<SavingsTemplate> = emptyList(),
     // true cuando ya se cargaron los datos semilla
     val isSeeded: Boolean = false
-)
+)

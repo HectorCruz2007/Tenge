@@ -4,9 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Surface
-import androidx.compose.ui.Modifier
+import com.zukesito.tenge.presentation.navigation.TengeApp
 import com.zukesito.tenge.presentation.theme.TengeTheme
 
 class MainActivity : ComponentActivity() {
@@ -15,7 +13,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             TengeTheme {
-                Surface(modifier = Modifier.fillMaxSize()) { }
+                TengeApp()
             }
         }
     }

@@ -1,6 +1,6 @@
 package com.zukesito.tenge.data.model
 
-/** Ingresos o gastos **/
+/** Ingresos o gastos */
 enum class RecurringType {
     INCOME,
     EXPENSE

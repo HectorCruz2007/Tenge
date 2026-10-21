@@ -1,6 +1,6 @@
 package com.zukesito.tenge.data.model
 
-/** Frecuencias **/
+/** Frecuencias */
 enum class Frequency {
     DAILY,
     WEEKLY,

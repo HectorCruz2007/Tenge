@@ -1,3 +1,212 @@
 <resources>
     <string name="app_name">Tenge</string>
+
+    <!-- Acciones generales -->
+    <string name="action_close">Cerrar</string>
+    <string name="action_save">Guardar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_accept">Aceptar</string>
+    <string name="action_delete">Eliminar</string>
+
+    <!-- Navegación -->
+    <string name="nav_home">Inicio</string>
+    <string name="nav_expenses">Gastos</string>
+    <string name="nav_recurring">Recurrentes</string>
+    <string name="nav_savings">Ahorro</string>
+    <string name="nav_investments">Inversiones</string>
+
+    <!-- Inicio -->
+    <string name="home_title">Inicio</string>
+    <string name="balance_available">Saldo disponible</string>
+    <string name="balance_net_worth">Patrimonio total: %1$s</string>
+    <string name="balance_decrease">− Reducir</string>
+    <string name="balance_increase">+ Aumentar</string>
+    <string name="home_notices">Avisos pendientes</string>
+    <string name="home_notices_empty">No tienes avisos pendientes</string>
+
+    <!-- Riesgo de fin de mes -->
+    <string name="risk_title">Riesgo de fin de mes</string>
+    <string name="risk_low">Bajo</string>
+    <string name="risk_medium">Medio</string>
+    <string name="risk_high">Alto</string>
+    <string name="risk_critical">Crítico</string>
+    <string name="risk_badge_with_margin">%1$s · %2$d%%</string>
+    <string name="risk_projection">Saldo proyectado al %1$s: %2$s · margen %3$d%%</string>
+
+    <!-- Avisos -->
+    <string name="notice_confirm">Confirmar</string>
+    <string name="notice_ignore">Ignorar esta vez</string>
+    <string name="notice_source_income">Ingreso recurrente</string>
+    <string name="notice_source_expense">Gasto recurrente</string>
+    <string name="notice_source_savings">Cuota de ahorro</string>
+    <string name="notice_savings_title">Aparta para %1$s</string>
+    <string name="notice_subtitle">%1$s · %2$s</string>
+    <string name="notice_due_today">vence hoy</string>
+    <string name="notice_overdue">venció %1$s</string>
+
+    <!-- Modificar saldo -->
+    <string name="adjust_current_balance">Saldo actual</string>
+    <string name="adjust_adjustment">Ajuste</string>
+    <string name="adjust_new_balance">Nuevo saldo</string>
+    <string name="placeholder_adjust_amount">500.00</string>
+    <string name="placeholder_adjust_note">Venta de bicicleta</string>
+    <string name="adjust_balance_title">Modificar saldo</string>
+    <string name="balance_decrease_option">Reducir</string>
+    <string name="balance_increase_option">Aumentar</string>
+
+    <!-- Gastos -->
+    <string name="expense_form_save">Guardar gasto</string>
+    <string name="expense_form_risk_preview">Riesgo después de este gasto</string>
+    <string name="placeholder_expense_amount">845.50</string>
+    <string name="placeholder_expense_note">Supermercado</string>
+    <string name="expenses_title">Gastos</string>
+    <string name="expenses_add">Registrar gasto</string>
+    <string name="expenses_month_total">Total del mes</string>
+    <string name="expenses_movements">Movimientos</string>
+    <string name="expenses_empty">Aún no hay gastos este mes</string>
+    <string name="expense_subtitle">%1$s · %2$s</string>
+    <string name="expense_form_title">Nuevo gasto</string>
+
+    <!-- Recurrentes -->
+    <string name="recurring_form_save">Guardar recurrente</string>
+    <string name="recurring_how_it_works">Así funcionará</string>
+    <string name="recurring_how_daily">Cada día verás un aviso en Inicio por %1$s para confirmarlo o ignorarlo esa vez.</string>
+    <string name="recurring_how_weekly">Cada %1$s verás un aviso en Inicio por %2$s para confirmarlo o ignorarlo esa vez.</string>
+    <string name="recurring_how_monthly">Cada %1$d de mes verás un aviso en Inicio por %2$s para confirmarlo o ignorarlo esa vez.</string>
+    <string name="placeholder_recurring_name">Renta</string>
+    <string name="placeholder_recurring_amount">4,500.00</string>
+    <string name="recurring_title">Recurrentes</string>
+    <string name="recurring_add">Crear recurrente</string>
+    <string name="recurring_incomes">Ingresos</string>
+    <string name="recurring_expenses">Gastos</string>
+    <string name="recurring_monthly_estimate">Estimado mensual</string>
+    <string name="recurring_next">Próximo: %1$s</string>
+    <string name="recurring_empty">No hay recurrentes en esta lista</string>
+    <string name="recurring_form_title">Nuevo recurrente</string>
+    <string name="recurring_type_income">Ingreso</string>
+    <string name="recurring_type_expense">Gasto</string>
+
+    <!-- Ahorro -->
+    <string name="savings_form_save">Crear plan</string>
+    <string name="savings_form_calculated">Calculado por la app</string>
+    <string name="savings_form_installments">Número de cuotas</string>
+    <string name="savings_form_goal_date">Meta para</string>
+    <string name="savings_empty_title">Aún no tienes planes de ahorro</string>
+    <string name="savings_empty_message">Define una meta y la app calculará cuánto apartar cada día, semana o mes.</string>
+    <string name="placeholder_goal_name">Laptop</string>
+    <string name="placeholder_goal_amount">15,000.00</string>
+    <string name="placeholder_term">10</string>
+    <string name="savings_title">Ahorro</string>
+    <string name="savings_add">Crear plan de ahorro</string>
+    <string name="savings_status_in_progress">En curso</string>
+    <string name="savings_status_behind">Atrasado</string>
+    <string name="savings_status_completed">Cumplido</string>
+    <string name="savings_progress_amounts">%1$s de %2$s</string>
+    <string name="savings_quota">Cuota</string>
+    <string name="savings_next_due">Próximo aporte</string>
+    <string name="savings_estimated">Fecha estimada</string>
+    <string name="savings_deadline">Fecha límite</string>
+    <string name="savings_form_title">Nuevo plan de ahorro</string>
+    <string name="percent_value">%1$d%%</string>
+
+    <!-- Inversiones -->
+    <string name="fund_form_save">Guardar fondo</string>
+    <string name="fund_form_preview">Vista previa (interés compuesto)</string>
+    <string name="fund_form_in_periods">En %1$s</string>
+    <string name="placeholder_fund_name">Inversión a plazo</string>
+    <string name="placeholder_fund_amount">10,250.00</string>
+    <string name="placeholder_fund_rate">0.8</string>
+    <string name="investments_title">Inversiones</string>
+    <string name="investments_add">Registrar fondo</string>
+    <string name="investments_total_today">Valor total hoy</string>
+    <string name="investments_empty">Aún no tienes fondos registrados</string>
+    <string name="investments_current_value">Valor actual</string>
+    <string name="investments_rate">%1$s %2$s</string>
+    <string name="investments_rate_since">%1$s %2$s · desde %3$s</string>
+    <string name="investments_projection">Proyección</string>
+    <string name="investments_project_to">Proyectar a</string>
+    <string name="investments_periods">Periodos</string>
+    <string name="investments_estimated_value">Valor estimado</string>
+    <string name="investments_table_period">Periodo</string>
+    <string name="investments_table_value">Valor</string>
+    <string name="fund_form_title">Nuevo fondo</string>
+
+    <!-- Frecuencias -->
+    <string name="frequency_daily_f">Diaria</string>
+    <string name="frequency_daily">Diario</string>
+    <string name="frequency_weekly">Semanal</string>
+    <string name="frequency_monthly">Mensual</string>
+    <string name="frequency_daily_lower">diario</string>
+    <string name="frequency_weekly_lower">semanal</string>
+    <string name="frequency_monthly_lower">mensual</string>
+    <string name="per_day">%1$s / día</string>
+    <string name="per_week">%1$s / semana</string>
+    <string name="per_month">%1$s / mes</string>
+    <string name="unit_days">Días</string>
+    <string name="unit_weeks">Semanas</string>
+    <string name="unit_months">Meses</string>
+
+    <plurals name="period_days">
+        <item quantity="one">%d día</item>
+        <item quantity="many">%d días</item>
+        <item quantity="other">%d días</item>
+    </plurals>
+    <plurals name="period_weeks">
+        <item quantity="one">%d semana</item>
+        <item quantity="many">%d semanas</item>
+        <item quantity="other">%d semanas</item>
+    </plurals>
+    <plurals name="period_months">
+        <item quantity="one">%d mes</item>
+        <item quantity="many">%d meses</item>
+        <item quantity="other">%d meses</item>
+    </plurals>
+
+    <!-- Campos de formularios -->
+    <string name="field_frequency">Frecuencia</string>
+    <string name="field_rate_frequency">El rendimiento se aplica</string>
+    <string name="field_template">Empezar desde una plantilla</string>
+    <string name="field_amount">Monto</string>
+    <string name="field_category">Categoría</string>
+    <string name="field_date">Fecha</string>
+    <string name="field_note_optional">Nota (opcional)</string>
+    <string name="field_name">Nombre</string>
+    <string name="field_start_date">Fecha de inicio</string>
+    <string name="field_goal_name">Nombre del objetivo</string>
+    <string name="field_goal_amount">Monto necesario</string>
+    <string name="field_term">Plazo</string>
+    <string name="field_invested_amount">Monto invertido actualmente</string>
+    <string name="field_rate">Rendimiento por periodo</string>
+
+    <!-- Validaciones y errores -->
+    <string name="error_amount_exceeds_balance">El monto supera tu saldo disponible (%1$s).</string>
+    <string name="error_amount_positive">El monto debe ser mayor a cero</string>
+    <string name="error_name_required">Escribe un nombre</string>
+    <string name="error_term_positive">El plazo debe ser mayor a cero</string>
+    <string name="error_category_required">Elige una categoría.</string>
+    <string name="error_rate_range">La tasa debe ser mayor a 0 y máximo %1$s %2$s</string>
+    <string name="error_insufficient_balance">Saldo insuficiente: la operación dejaría el saldo negativo</string>
+
+    <!-- Eliminación -->
+    <string name="delete_expense_title">¿Eliminar gasto?</string>
+    <string name="delete_expense_message">Se eliminará «%1$s» del %2$s por %3$s y el monto regresará a tu saldo disponible.</string>
+    <string name="delete_recurring_title">¿Eliminar recurrente?</string>
+    <string name="delete_recurring_message">Se eliminará «%1$s» y ya no generará avisos.</string>
+    <string name="delete_plan_title">¿Eliminar plan de ahorro?</string>
+    <string name="delete_plan_message">Se eliminará «%1$s» y ya no generará avisos de cuota.</string>
+    <string name="delete_fund_title">¿Eliminar fondo?</string>
+    <string name="delete_fund_message">Se eliminará «%1$s» y dejará de contar en tu patrimonio.</string>
+
+    <!-- Mensajes de éxito -->
+    <string name="message_balance_updated">Saldo actualizado</string>
+    <string name="message_expense_saved">Gasto registrado</string>
+    <string name="message_expense_deleted">Gasto eliminado</string>
+    <string name="message_recurring_saved">Recurrente creado</string>
+    <string name="message_recurring_deleted">Recurrente eliminado</string>
+    <string name="message_plan_saved">Plan de ahorro creado</string>
+    <string name="message_plan_deleted">Plan de ahorro eliminado</string>
+    <string name="message_fund_saved">Fondo registrado</string>
+    <string name="message_fund_deleted">Fondo eliminado</string>
+    <string name="message_notice_confirmed">Aviso confirmado</string>
+    <string name="message_notice_ignored">Aviso ignorado</string>
 </resources>
